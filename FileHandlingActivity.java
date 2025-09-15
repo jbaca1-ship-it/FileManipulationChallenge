@@ -32,6 +32,17 @@ public class FileHandlingActivity {
         }
 
         // d. Read and display file contents
+
+        try {
+            String notes = new String(Files.readAllBytes(Paths.get("notes.txt")));
+            String data = new String(Files.readAllBytes(Paths.get("data.txt")));
+            String log = new String(Files.readAllBytes(Paths.get("log.txt")));
+            System.out.println("notes.txt: " + notes);
+            System.out.println("data.txt: " + data);
+            System.out.println("log.txt: "+log);
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
         
         // e. Create backup directory
         
