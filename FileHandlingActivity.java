@@ -5,6 +5,9 @@ public class FileHandlingActivity {
         // Your code here
         
         // a. Create main directory
+
+        File dir = new File("main");
+        dir.mkdir();
         
         // b. Create three text files
         
