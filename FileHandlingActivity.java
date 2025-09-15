@@ -45,6 +45,13 @@ public class FileHandlingActivity {
         }
         
         // e. Create backup directory
+
+        Path dirr = Paths.get(Paths.get("main").toString(), "Backup");
+        try {
+            Files.createDirectories(dirr);
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
         
         // f. Copy contents to backup file
         
