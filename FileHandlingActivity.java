@@ -14,16 +14,23 @@ public class FileHandlingActivity {
         // b. Create three text files
 
         try {
-            Files.write(Paths.get("notes.txt"), "Password".getBytes(StandardCharsets.UTF_8));
-            Files.write(Paths.get("data.txt"), "Password".getBytes(StandardCharsets.UTF_8));
-            Files.write(Paths.get("log.txt"), "Password".getBytes(StandardCharsets.UTF_8));
+            Files.createFile(Paths.get("notes.txt"));
+            Files.createFile(Paths.get("data.txt"));
+            Files.createFile(Paths.get("log.txt"));
         } catch (Exception e) {
             // TODO: handle exception
         }
 
-
         // c. Write messages to files
         
+         try {
+            Files.write(Paths.get("notes.txt"), "Fortnite".getBytes(StandardCharsets.UTF_8));
+            Files.write(Paths.get("data.txt"), "Battle".getBytes(StandardCharsets.UTF_8));
+            Files.write(Paths.get("log.txt"), "Pass".getBytes(StandardCharsets.UTF_8));
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+
         // d. Read and display file contents
         
         // e. Create backup directory
