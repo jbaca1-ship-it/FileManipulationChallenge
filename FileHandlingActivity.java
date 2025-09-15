@@ -54,6 +54,15 @@ public class FileHandlingActivity {
         }
         
         // f. Copy contents to backup file
+        try {
+            String notes = new String(Files.readAllBytes(Paths.get("notes.txt")));
+            String data = new String(Files.readAllBytes(Paths.get("data.txt")));
+            String log = new String(Files.readAllBytes(Paths.get("log.txt")));
+            String text = notes + data + log;
+            Files.write(Paths.get("main/Backup").resolve(Paths.get("backup.txt")), text.getBytes(StandardCharsets.UTF_8));
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
         
         // g. List all files in both directories
     }
