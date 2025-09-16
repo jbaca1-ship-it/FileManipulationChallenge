@@ -1,4 +1,6 @@
-import java.io.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.file.*;
 import java.nio.charset.StandardCharsets;
 
@@ -81,6 +83,23 @@ public class FileHandlingActivity {
             System.out.println(str.trim());
         } catch (Exception e) {
             // TODO: handle exception
+        }
+
+        debugFileOperation();
+    }
+
+    public static void debugFileOperation() {
+        try {
+            // Creating a file with an valid name
+            File file = new File("fileName.txt");
+        
+            // Attempting to write to the valid file
+            FileWriter writer = new FileWriter(file);
+            writer.write("Will this fail?");
+            writer.close();
+        }   catch (IOException e) {
+            System.out.println("An error occurred: " + e.getMessage());
+            e.printStackTrace(); 
         }
     }
 }
